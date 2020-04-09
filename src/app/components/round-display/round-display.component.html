@@ -19,10 +19,6 @@
   <app-race-track [highlightTiles]="highlightTiles" [showTilesInPlayerRange]="showTilesInRange" [gameState]="gameState"></app-race-track>
 
   <div class="sections" *ngIf="showDetails">
-    <section class="moves-section" *ngIf="showBestMoves">
-      <h6>Recommended Moves:</h6>
-      <app-player-moves-display [showTotals]="showTotals" [player]="gameState.player"></app-player-moves-display>
-    </section>
     <section class="moves-section">
       <h6>Taken Moves:</h6>
       <app-player-taken-moves [showTotals]="showTotals" [player]="gameState.player"></app-player-taken-moves>
