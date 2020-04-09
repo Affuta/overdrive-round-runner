@@ -15,7 +15,6 @@
   <app-round-display playerName="Player One" [showDetails]="showDetails" [gameState]="currentRound.playerOneState"></app-round-display>
   <app-round-display playerName="Player Two" [showDetails]="showDetails" [gameState]="currentRound.playerTwoState"></app-round-display>
 </div>
-<pre>{{currentRound | json}}</pre>
 
 <ng-template #showInstructions>
   <div class="instructions">
@@ -24,7 +23,8 @@
     <p>Have you done the following?</p>
     <ol>
       <li>
-        <p>Paste a directory from any of the previous matches in the <strong>src/assets</strong> folder</p>
+        <p>Paste the rounds from the generated match-logs in the <strong>src/assets/rounds</strong> directory</p>
+        <p>Initially there will be 5 rounds in this directory as an example</p>
       </li>
 
       <li>
@@ -34,13 +34,15 @@
 
       <li>
         <p>In the <strong>custom-config.ts</strong> file specify the directory names for the players found in any of the round folders</p>
-        <p>For example in a round folder: /game-runner/match-logs/2020.03.29.21.06.33/Round 002</p>
+        <p>For example in a round folder:  src/assets/Round 001</p>
+        <p>The two player directories are A - Bob and B - Fred</p>
         <p>Copy the directory names for the players:</p>
         <ul>
-          <li>export const PLAYER_ONE_DIR = 'A - Player One'</li>
-          <li>export const PLAYER_TWO_DIR = 'B - Player Two'</li>
+          <li>export const PLAYER_ONE_DIR = 'A - Bob'</li>
+          <li>export const PLAYER_TWO_DIR = 'B - Fred'</li>
         </ul>
       </li>
     </ol>
   </div>
 </ng-template>
+
