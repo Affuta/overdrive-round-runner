@@ -1,0 +1,11 @@
+<ng-template [ngIf]="gameState">
+  <div *ngFor="let lane of gameState.worldMap.lanes" class="lane">
+    <app-race-tile
+      [showTilesInPlayerRange]="showTilesInPlayerRange"
+      [player]="gameState.player"
+      [tile]="tile"
+      [highlightTiles]="highlightTiles"
+      *ngFor="let tile of lane.tiles"
+    ></app-race-tile>
+  </div>
+</ng-template>

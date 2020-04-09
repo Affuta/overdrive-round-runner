@@ -1,0 +1,55 @@
+:host {
+  --color-speed-1: #5ee96a;
+  --color-speed-2: #93ee42;
+  --color-speed-3: #b5f06a;
+  --color-speed-4: #d5f36d;
+  --color-speed-5: #f0f774;
+  --color-speed-6: #f4e262;
+  --color-speed-7: #eec866;
+  --color-speed-8: #ecad5f;
+  --color-speed-9: #e28455;
+  --color-speed-10: #d9594d;
+
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+
+  .speed-item {
+    flex-grow: 1;
+    margin-right: 0.25rem;
+    border: 1px solid;
+    border-radius: 0.25rem;
+  }
+  .has-speed {
+    &.speed-1 {
+      background-color: var(--color-speed-1);
+    }
+    &.speed-2 {
+      background-color: var(--color-speed-2);
+    }
+    &.speed-3 {
+      background-color: var(--color-speed-3);
+    }
+    &.speed-4 {
+      background-color: var(--color-speed-4);
+    }
+    &.speed-5 {
+      background-color: var(--color-speed-5);
+    }
+    &.speed-6 {
+      background-color: var(--color-speed-6);
+    }
+    &.speed-7 {
+      background-color: var(--color-speed-7);
+    }
+    &.speed-8 {
+      background-color: var(--color-speed-8);
+    }
+    &.speed-9 {
+      background-color: var(--color-speed-9);
+    }
+    &.speed-10 {
+      background-color: var(--color-speed-10);
+    }
+  }
+}

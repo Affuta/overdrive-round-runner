@@ -1,0 +1,17 @@
+<div *ngIf="currentRound" [ngClass]="selectedTheme.className">
+  <div class="round-controls">
+    <div class="buttons">
+      <button (click)="onPreviousRound()">Previous</button>
+      <button (click)="onToggleGame()">{{ isRoundPlaying ? 'Pause' : 'Play' }}</button>
+      <button (click)="onNextRound()">Next</button>
+      <button (click)="onRestart()">Restart</button>
+    </div>
+
+    <select [value]="selectedTheme.className" (change)="onChangeTheme($event.target.value)">
+      <option *ngFor="let theme of themes" [value]="theme.className">{{ theme.name }}</option>
+    </select>
+  </div>
+
+  <app-round-display playerName="Player One" [showDetails]="showDetails" [gameState]="currentRound.playerOneState"></app-round-display>
+  <app-round-display playerName="Player Two" [showDetails]="showDetails" [gameState]="currentRound.playerTwoState"></app-round-display>
+</div>

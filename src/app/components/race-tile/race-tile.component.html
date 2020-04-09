@@ -1,0 +1,20 @@
+<div
+  class="tile"
+  [ngClass]="{
+    highlight: highlightTiles,
+    empty: tile.surfaceObject === mapObject.EMPTY,
+    mud: tile.surfaceObject === mapObject.MUD_MAP_OBJECT,
+    'oil-spill': tile.surfaceObject === mapObject.OIL_SPILL_MAP_OBJECT,
+    boost: tile.surfaceObject === mapObject.BOOST_MAP_OBJECT,
+    oil: tile.surfaceObject === mapObject.OIL_ITEM_MAP_OBJECT,
+    finish: tile.surfaceObject === mapObject.FINISH_LINE_MAP_OBJECT,
+    player: tile.occupiedByPlayerId !== 0,
+    'in-player-range':
+      showTilesInPlayerRange &&
+      player &&
+      Math.abs(tile.position.y - player.position.y) <= 1 &&
+      (tile.position.x <= player.position.x + player.speed - 1 ||
+        (tile.position.x <= player.position.x + player.nextSpeed && tile.position.y === player.position.y)) &&
+      (tile.position.x > player.position.x || (tile.position.x === player.position.x && tile.position.y !== player.position.y))
+  }"
+></div>

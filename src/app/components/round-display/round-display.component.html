@@ -1,0 +1,71 @@
+<div class="display-container" *ngIf="gameState">
+  <div class="display-header">
+    <h5>{{ playerName }}</h5>
+    <div class="display-options" *ngIf="showDisplayOptions">
+      <p class="display-option">
+        <span>Highlight tiles</span> <input [checked]="highlightTiles" (change)="onHighlightTilesChanged($event)" type="checkbox" />
+      </p>
+      <p class="display-option">
+        <span>Tiles in range</span> <input [checked]="showTilesInRange" (change)="onShowTilesInRangeChanged($event)" type="checkbox" />
+      </p>
+    </div>
+    <h6 [ngClass]="gameState.player.position.x > gameState.opponent.position.x ? 'leading' : 'trailing'">
+      {{ gameState.player.position.x > gameState.opponent.position.x ? 'Leading By:' : ' Trailing By: ' }}
+      {{ math.abs(gameState.player.position.x - gameState.opponent.position.x) }}
+    </h6>
+    <app-speedometer [speed]="gameState.player.speed"></app-speedometer>
+  </div>
+
+  <app-race-track [highlightTiles]="highlightTiles" [showTilesInPlayerRange]="showTilesInRange" [gameState]="gameState"></app-race-track>
+
+  <div class="sections" *ngIf="showDetails">
+    <section class="moves-section" *ngIf="showBestMoves">
+      <h6>Recommended Moves:</h6>
+      <app-player-moves-display [showTotals]="showTotals" [player]="gameState.player"></app-player-moves-display>
+    </section>
+    <section class="moves-section">
+      <h6>Taken Moves:</h6>
+      <app-player-taken-moves [showTotals]="showTotals" [player]="gameState.player"></app-player-taken-moves>
+    </section>
+    <section class="moves-section">
+      <h6>States:</h6>
+      <app-player-state-display [showTotals]="showTotals" [player]="gameState.player"></app-player-state-display>
+    </section>
+    <section class="round-details-section">
+      <h6>Current Round: {{ gameState.currentRound }}</h6>
+      <ng-template [ngTemplateOutlet]="roundDetails" [ngTemplateOutletContext]="{ $implicit: gameState }"></ng-template>
+    </section>
+    <section class="round-details-section" *ngIf="previousGameState">
+      <h6>Previous Round: {{ previousGameState.currentRound }}</h6>
+      <ng-template [ngTemplateOutlet]="roundDetails" [ngTemplateOutletContext]="{ $implicit: previousGameState }"></ng-template>
+    </section>
+  </div>
+</div>
+
+<ng-template #roundDetails let-state>
+  <div class="scrollable player-details">
+    <p class="display-label">
+      <span>Speed:</span><span>{{ state.player.speed }}</span>
+    </p>
+
+    <p class="display-label">
+      <span>State:</span><span>{{ state.player.state }}</span>
+    </p>
+
+    <p class="display-label">
+      <span>Best Move:</span> <span>{{ bestMove }}</span>
+    </p>
+    <p class="display-label">
+      <span>Boosters</span><span>{{ numberOfBoosts }}</span>
+    </p>
+    <p class="display-label">
+      <span>Oil Drop</span><span>{{ numberOfBoosts }}</span>
+    </p>
+    <p class="display-label">
+      <span>Distance Left: </span><span>{{ trackLength - state.player.position.x | json }}</span>
+    </p>
+    <p class="display-label">
+      <span>Lane: </span><span>{{ state.player.position.y | json }}</span>
+    </p>
+  </div>
+</ng-template>

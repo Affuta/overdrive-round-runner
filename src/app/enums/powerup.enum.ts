@@ -1,0 +1,4 @@
+export enum POWERUP {
+  OIL_POWERUP_ITEM = 'OIL',
+  BOOST_POWERUP_ITEM = 'BOOST',
+}

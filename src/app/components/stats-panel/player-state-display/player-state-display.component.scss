@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  color: var(--color-1);
+
+  h6 {
+    color: var(--color-4);
+    margin: 0.5rem 0;
+  }
+}

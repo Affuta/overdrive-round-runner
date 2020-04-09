@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.winter-theme {
+  --color-1: #f9b4ad;
+  --color-2: #222552;
+  --color-3: #707282;
+  --color-4: #d1f0eb;
+  --color-5: #1b81c2;
+}
+
+.summer-theme {
+  --color-1: #ffd58e;
+  --color-2: #ff9b5a;
+  --color-3: #ec2f3b;
+  --color-4: #52b3b6;
+  --color-5: #f26249;
+}
+
+.forest-theme {
+  --color-1: #2b463c;
+  --color-2: #688f4e;
+  --color-3: #b1d182;
+  --color-4: #f4f1e9;
+  --color-5: #ffffff;
+}
+
+.retro-theme {
+  --color-1: #fff;
+  --color-2: #ff008d;
+  --color-3: #f0ff00;
+  --color-4: #00f9ff;
+  --color-5: #000000;
+}
+
+.sunset-theme {
+  --color-1: #64418b;
+  --color-2: #ff5800;
+  --color-3: #d42173;
+  --color-4: #fb294b;
+  --color-5: #a1378b;
+}
+
+.light-theme {
+  --color-1: #89999f;
+  --color-2: #7bb1b5;
+  --color-3: #72c9b8;
+  --color-4: #86dea9;
+  --color-5: #b7ef8d;
+}
+
+.neon-theme {
+  --color-1: #ff8d00;
+  --color-2: #1b015c;
+  --color-3: #ff00a7;
+  --color-4: #21ff25;
+  --color-5: #20cdff;
+}
+.dark-theme {
+  --color-1: #a2a2a2;
+  --color-2: #252525;
+  --color-3: #3b3b3b;
+  --color-4: #515151;
+  --color-5: #101010;
+}
+.frost-theme {
+  --color-1: #9db8d6;
+  --color-2: #cee1f0;
+  --color-3: #a0aecc;
+  --color-4: #657090;
+  --color-5: #354567;
+}
+
+.desert-theme {
+  --color-1: #feff9f;
+  --color-2: #fff69a;
+  --color-3: #dfd07a;
+  --color-4: #cfd073;
+  --color-5: #d6bc4d;
+}
+.scrollable {
+  overflow: auto;
+  height: 170px;
+
+  &::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--color-1);
+    outline: 1px solid var(--color-1);
+    border-radius: 16px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-4);
+    border-radius: 2rem;
+  }
+}
+
+.display-label {
+  padding: 0 0.125rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+
+  span:first-child {
+    color: var(--color-4);
+  }
+}

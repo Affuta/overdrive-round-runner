@@ -1,0 +1,42 @@
+:host {
+  display: block;
+
+  input[type='checkbox'] {
+    background-color: var(--color-2);
+  }
+  .round-controls {
+    padding: 0.25rem;
+    background: var(--color-5);
+
+    display: flex;
+    justify-content: space-between;
+    .buttons {
+      button {
+        background-color: var(--color-4);
+        color: var(--color-1);
+        border: 1px solid;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: var(--color-1);
+        }
+
+        &:not(:first-child) {
+          margin-left: 1rem;
+        }
+      }
+    }
+    select {
+      min-width: 150px;
+      height: 2rem;
+      border-radius: 3px;
+      background-color: var(--color-4);
+      color: var(--color-1);
+      border: 1px solid;
+      margin-left: 1rem;
+    }
+  }
+}

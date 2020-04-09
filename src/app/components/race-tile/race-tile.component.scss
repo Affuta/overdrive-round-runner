@@ -1,0 +1,75 @@
+:host {
+  display: block;
+  width: 100%;
+
+  .tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    max-width: 2.5rem;
+    border: 2px solid var(--color-4);
+    margin: 0.25rem;
+    background-color: var(--color-4);
+    border-radius: 0.25rem;
+
+    span {
+      color: var(--color-1);
+    }
+    &.empty {
+      //background-color: blue;
+      background-color: var(--color-4);
+    }
+
+    &.mud {
+      background-size: cover;
+      background-image: url('../../../assets/tiles/mud.png');
+      &.highlight {
+        border-color: #eec866;
+      }
+    }
+
+    &.oil-spill {
+      background-size: cover;
+      background-image: url('../../../assets/tiles/oil-spill.png');
+      &.highlight {
+        border-color: #eec866;
+      }
+    }
+
+    &.oil {
+      background-size: contain;
+      background-image: url('../../../assets/tiles/oil.png');
+      &.highlight {
+        border-color: #93ee42;
+      }
+    }
+
+    &.boost {
+      background-size: cover;
+      background-image: url('../../../assets/tiles/boost.png');
+
+      &.highlight {
+        border-color: #93ee42;
+      }
+    }
+
+    &.finish {
+      background-size: cover;
+      background-image: url('../../../assets/tiles/flag.png');
+      background-color: var(--color-1);
+    }
+
+    &.player {
+      background-size: cover;
+      background-image: url('../../../assets/tiles/car.png');
+      &.highlight {
+        border-color: #5ee96a;
+      }
+    }
+    &.in-player-range {
+      border-style: solid;
+      border-color: #f0f774;
+    }
+  }
+}

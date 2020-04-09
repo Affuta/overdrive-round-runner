@@ -1,0 +1,11 @@
+<div #list class="scrollable">
+  <p class="display-label" *ngFor="let move of items; let i = index">
+    <span>{{ i + 1 }}:</span> <span>{{ move }}</span>
+  </p>
+</div>
+<ng-template [ngIf]="showTotals">
+  <h6>Totals:</h6>
+  <p class="display-label" *ngFor="let count of itemCount">
+    <span>{{ count.name }}:</span> <span>{{ count.count }}</span>
+  </p>
+</ng-template>

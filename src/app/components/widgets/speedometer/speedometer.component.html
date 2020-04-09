@@ -1,0 +1,5 @@
+<div
+  *ngFor="let item of createArray(15); let i = index"
+  [class]="'speed-item speed-' + Math.min(i + 2, 10)"
+  [ngClass]="{ 'has-speed': i + 1 <= speed }"
+></div>
