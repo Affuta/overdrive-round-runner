@@ -1,27 +1,18 @@
 # RoundRunner
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+Angular visualizer for the Overdrive game for the Entelect Challenge. 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Setup
+- Run npm install  
+- Paste a directory from any of the previous matches in the src/assets folder
+- Rename the folder to rounds
+- For example '2020.04.04.14.53.15' to 'rounds'</p>
+- In the custom-config.ts file specify the directory names for the players found in any of the round folders
+- For example in a round folder: /game-runner/match-logs/2020.03.29.21.06.33/Round 002
+- Copy the directory names for the players in the custom-config.ts file:
+   
+       export const PLAYER_ONE_DIR = 'A - Player One'
+       export const PLAYER_TWO_DIR = 'B - Player Two'
+       
+- Run npm start
