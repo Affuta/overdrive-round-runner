@@ -1,6 +1,10 @@
 :host {
   display: block;
 
+  .instructions {
+    padding: 1rem;
+  }
+
   input[type='checkbox'] {
     background-color: var(--color-2);
   }

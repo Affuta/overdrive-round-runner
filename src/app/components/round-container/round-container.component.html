@@ -1,4 +1,4 @@
-<div *ngIf="currentRound" [ngClass]="selectedTheme.className">
+<div *ngIf="currentRound; else showInstructions" [ngClass]="selectedTheme.className">
   <div class="round-controls">
     <div class="buttons">
       <button (click)="onPreviousRound()">Previous</button>
@@ -15,3 +15,32 @@
   <app-round-display playerName="Player One" [showDetails]="showDetails" [gameState]="currentRound.playerOneState"></app-round-display>
   <app-round-display playerName="Player Two" [showDetails]="showDetails" [gameState]="currentRound.playerTwoState"></app-round-display>
 </div>
+<pre>{{currentRound | json}}</pre>
+
+<ng-template #showInstructions>
+  <div class="instructions">
+    <h4>Round Runner</h4>
+    <p>Looks like something went wrong..</p>
+    <p>Have you done the following?</p>
+    <ol>
+      <li>
+        <p>Paste the directory from any of the previous matches in the <strong>src/assets</strong> folder</p>
+      </li>
+
+      <li>
+        <p>Rename the folder to <strong>rounds</strong></p>
+        <p>For example <strong>2020.04.04.14.53.15</strong> to <strong>rounds</strong></p>
+      </li>
+
+      <li>
+        <p>In the <strong>custom-config.ts</strong> file specify the directory names for the players found in any of the round folders</p>
+        <p>For example in a round folder: /game-runner/match-logs/2020.03.29.21.06.33/Round 002</p>
+        <p>Copy the directory names for the players:</p>
+        <ul>
+          <li>export const PLAYER_ONE_DIR = 'A - Player One'</li>
+          <li>export const PLAYER_TWO_DIR = 'B - Player Two'</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</ng-template>
