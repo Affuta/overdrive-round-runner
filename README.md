@@ -1,7 +1,7 @@
 # RoundRunner
 
 Angular visualizer for the Overdrive game for the Entelect Challenge. 
-
+![Image description](/src/assets/Vizualizer.PNG)
 
 ## Setup
 - Run npm install  
